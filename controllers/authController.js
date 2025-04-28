@@ -48,7 +48,7 @@ exports.login = async (req, res) => {
       expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), 
     });
 
-    success(res, { user: { _id: user._id, name: user.name, email: user.email } }, 'Login successful', 200);
+    success(res, { user: { _id: user._id, name: user.name, email: user.email },token }, 'Login successful', 200);
   } catch (error) {
     console.error('Login error:', error);
     res.status(500).json({ message: 'Server error' });
